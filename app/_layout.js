@@ -7,6 +7,12 @@ import {
   PaperProvider,
 } from 'react-native-paper';
 
+//icons
+import { MaterialIcons } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+
 export default function AppLayout() {
   const colorScheme = useColorScheme();
   const { theme } = useMaterial3Theme();
@@ -21,15 +27,70 @@ export default function AppLayout() {
     <Tabs
     screenOptions={{
         headerStyle: {
-          backgroundColor: '#f4511e',
+          backgroundColor: paperTheme.colors.primaryContainer,
         },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
+        headerTintColor: paperTheme.colors.primary,
       }}
     >
-    </Tabs>
+    <Tabs.Screen
+    // Name of the route to hide.
+    name="tools"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      title: "Tools",
+      tabBarIcon: ({ color, size }) => (
+        <Octicons name="tools" size={size} color={color} />
+      ),
+    }}
+  /><Tabs.Screen
+    // Name of the route to hide.
+    name="index"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      title: "Home",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialIcons name="home" size={size} color={color} />
+      ),
+    }}
+  />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="about"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      title: "About",
+      tabBarIcon: ({ color, size }) => (
+        <Ionicons name="people" size={size} color={color} />
+      ),
+    }}
+  />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="physical"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      href: null,
+      title: "Physical",
+      tabBarIcon: ({ color, size }) => (
+        <Ionicons name="body" size={size} color={color} />
+      ),
+    }}
+  />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="mental"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      href: null,
+      title: "Mental",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="brain" size={size} color={color} />
+      ),
+    }}
+  />
+  
+  
+  </Tabs>
     </PaperProvider>
   );
 }
