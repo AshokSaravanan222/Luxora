@@ -30,9 +30,9 @@ const Page = () => {
           }}
         >
           <Welcome
-            handleClick={() => {
+            handleSearchClick={() => {
               router.push({
-                pathname: "(drawer)/home/search",
+                pathname: "learn/search",
                 params: {cat: cat, gen: gen}
               });
             }}

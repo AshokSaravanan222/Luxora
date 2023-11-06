@@ -15,7 +15,7 @@ import SearchButton from "./SearchButton";
 const genres = ['Personal Growth', 'Leadership/Management', 'Creativity', 'Finance/Wealth', 'Communication/Relationships',
 'Health/Wellness', 'Mindfulness', 'Spirituality'];
 
-const Welcome = ({ handleClick, cat, gen, name}) => {
+const Welcome = ({ handleSearchClick, cat, gen, name}) => {
   const router = useRouter();
   const [genre, setGenre] = useState("Personal Growth");
 
@@ -27,7 +27,7 @@ const Welcome = ({ handleClick, cat, gen, name}) => {
       </View>
 
       <SearchButton 
-          onPress={handleClick}
+          onPress={handleSearchClick}
       />
 
       <View style={styles.tabsContainer}>
