@@ -6,6 +6,7 @@ import {
   MD3LightTheme,
   PaperProvider,
 } from 'react-native-paper';
+import { useFonts } from "expo-font";
 
 //icons
 import { MaterialIcons } from '@expo/vector-icons';
@@ -21,6 +22,16 @@ export default function AppLayout() {
     colorScheme === 'dark'
       ? { ...MD3DarkTheme, colors: theme.dark }
       : { ...MD3LightTheme, colors: theme.light };
+
+  const [fontsLoaded] = useFonts({
+    DMBold: require("../assets/fonts/DMSans-Bold.ttf"),
+    DMMedium: require("../assets/fonts/DMSans-Medium.ttf"),
+    DMRegular: require("../assets/fonts/DMSans-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <PaperProvider theme={paperTheme}>
@@ -66,11 +77,11 @@ export default function AppLayout() {
   />
   <Tabs.Screen
     // Name of the route to hide.
-    name="physical"
+    name="live"
     options={{
       // This tab will no longer show up in the tab bar.
       href: null,
-      title: "Physical",
+      title: "Live",
       tabBarIcon: ({ color, size }) => (
         <Ionicons name="body" size={size} color={color} />
       ),
@@ -78,11 +89,11 @@ export default function AppLayout() {
   />
   <Tabs.Screen
     // Name of the route to hide.
-    name="mental"
+    name="learn"
     options={{
       // This tab will no longer show up in the tab bar.
       href: null,
-      title: "Mental",
+      title: "Learn",
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name="brain" size={size} color={color} />
       ),

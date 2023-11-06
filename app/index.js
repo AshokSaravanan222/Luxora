@@ -5,9 +5,6 @@ import { Link, router } from "expo-router";
 import { useTheme} from 'react-native-paper';
 
 
-import Svg, { Circle } from 'react-native-svg';
-
-
 const window = Dimensions.get('window');
 const FAB_SIZE = window.width * 0.4; // Example: FABs are 30% of the screen width
 const FAB_RADIUS = FAB_SIZE / 2;
@@ -58,21 +55,21 @@ export default function Page() {
                     icon="book"
                     style={[styles.fab, styles.fab1]}
                     customSize={FAB_SIZE}
-                    onPress={() => router.push("/physical")}
+                    onPress={() => router.push("/learn")}
                 />
 
                 <FAB
                     icon="run"
                     style={[styles.fab, styles.fab2]}
                     customSize={FAB_SIZE}
-                    onPress={() => router.push("/physical")}
+                    onPress={() => router.push("/live")}
                 />
 
                 <FAB
                     icon="heart"
                     style={[styles.fab, styles.fab3]}
                     customSize={FAB_SIZE}
-                    onPress={() => router.push("/physical")}
+                    onPress={() => router.push("/love")}
                 />
             </View>
 
