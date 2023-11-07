@@ -4,7 +4,7 @@ import { SearchBar } from "react-native-elements";
 import useFetch from "../../../hook/useFetch";
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router'
 
-import NearbyJobCard from "../../../components/home/cards/nearby/NearbyJobCard";
+import NearbyJobCard from "../../../components/learn/cards/nearby/NearbyJobCard";
 import { COLORS, SIZES } from '../../../constants'
 import styles from '../../../styles/search'
 
