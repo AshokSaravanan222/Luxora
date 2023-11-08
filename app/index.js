@@ -78,7 +78,7 @@ export default function Page() {
                     icon="calendar"
                     label={"Calendar"}
                     style={{width: FAB_SIZE*2, borderColor: 'red', backgroundColor: 'white'}}
-                    onPress={() => router.push("/physical")}
+                    onPress={() => router.push("/calendar")}
             />
             </View>
 

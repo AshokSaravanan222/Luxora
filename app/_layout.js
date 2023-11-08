@@ -99,6 +99,32 @@ export default function AppLayout() {
       ),
     }}
   />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="love"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      href: null,
+      title: "Love",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="heart" size={size} color={color} />
+      ),
+    }}
+  />
+
+<Tabs.Screen
+    // Name of the route to hide.
+    name="calendar"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      href: null,
+      title: "Calendar",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="calendar" size={size} color={color} />
+      ),
+    }}
+  />
+
   
   
   </Tabs>
