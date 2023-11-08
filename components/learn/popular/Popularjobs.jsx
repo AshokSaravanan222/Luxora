@@ -24,7 +24,7 @@ const Popularjobs = ({ cat, gen }) => {
 
   const handleCardPress = (book) => {
     router.push({
-      pathname: `(drawer)/home/book-details/${book.id}`,
+      pathname: `learn/book-details/${book.id}`,
       params: {cat: cat, gen: gen}
     });
     setSelectedBook(book.id);
@@ -37,7 +37,7 @@ const Popularjobs = ({ cat, gen }) => {
         <TouchableOpacity
           onPress={() => {
             router.push({
-              pathname: "(drawer)/home/all/top",
+              pathname: "learn/all/top",
               params: {cat: cat, gen: gen}
             });
         }}

@@ -46,7 +46,7 @@ const Nearbyjobs = ( { cat, gen} ) => {
               book={book}
               key={book.id}
               handleNavigate={() => router.push({
-                pathname: `(drawer)/home/book-details/${book.id}`,
+                pathname: `learn/book-details/${book.id}`,
                 params: {cat: cat, gen: gen}
             })}
             />
@@ -57,7 +57,7 @@ const Nearbyjobs = ( { cat, gen} ) => {
         <TouchableOpacity
           onPress={() => {
             router.push({
-              pathname: `(drawer)/home/all/${genre}`, // where else did this call get made
+              pathname: `learn/all/${genre}`, // where else did this call get made
               params: {cat: cat, gen: gen}
             });
           }}

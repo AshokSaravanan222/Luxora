@@ -3,7 +3,8 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "./popularjobcard.style";
 import { checkImageURL } from "../../../../utils";
 
-import { SIZES, FONT } from "../../../../constants";
+import { SIZES, FONT, images} from "../../../../constants";
+
 
 const PopularJobCard = ({ book, selectedBook, handleCardPress }) => {
   return (
@@ -17,7 +18,7 @@ const PopularJobCard = ({ book, selectedBook, handleCardPress }) => {
         source={
           checkImageURL(book.thumbnail)
           ? { uri: book.thumbnail }
-          : require('../../../../assets/icon.png')
+          : images.logo
           }
         resizeMode='contain'
         style={styles.logoImage}

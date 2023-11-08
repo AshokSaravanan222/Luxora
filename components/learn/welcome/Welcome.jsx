@@ -39,7 +39,7 @@ const Welcome = ({ handleSearchClick, cat, gen, name}) => {
               onPress={() => {
                 setGenre(item);
                 router.push({
-                  pathname: `(drawer)/home/all/${item.replace(/\//g, " ")}`,
+                  pathname: `learn/all/${item.replace(/\//g, " ")}`,
                   params: {cat: cat, gen: gen}
                 });
               }}
