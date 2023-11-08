@@ -1,7 +1,7 @@
-import logo from "../assets/icon.png"
-import food from "../assets/food.jpg"
-import book from "../assets/book.jpg"
-import nutritionLogo from "../assets/nutrition_logo.png"
+const logo = require("../assets/icon.png")
+const food = require("../assets/food.jpg")
+const book = require("../assets/book.jpg")
+const nutritionLogo = require("../assets/nutrition_logo.png")
 
 export default {
   logo,
