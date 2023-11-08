@@ -2,6 +2,8 @@ import { Tabs } from 'expo-router/tabs';
 import { useMaterial3Theme } from '@pchmn/expo-material3-theme';
 import { useColorScheme} from 'react-native';
 
+import { Drawer } from 'expo-router/drawer';
+
 import {
   MD3DarkTheme,
   MD3LightTheme,
@@ -44,133 +46,32 @@ export default function AppLayout() {
 
   return (
     <PaperProvider theme={paperTheme}>
-    <Tabs
-    screenOptions={{
-        headerStyle: {
-          backgroundColor: paperTheme.colors.primaryContainer,
+      <Drawer>
+      <Drawer.Screen
+        name="index" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: "Home",
+          drawerIcon: ({size, color})=> {
+            return <Ionicons name="home" size={size} color={color}/> // globe may not exist
         },
-        headerTintColor: paperTheme.colors.primary,
-      }}
-    >
-    <Tabs.Screen
-    // Name of the route to hide.
-    name="tools"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      title: "Tools",
-      tabBarIcon: ({ color, size }) => (
-        <Octicons name="tools" size={size} color={color} />
-      ),
-    }}
-  /><Tabs.Screen
-    // Name of the route to hide.
-    name="index"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      title: "Home",
-      tabBarIcon: ({ color, size }) => (
-        <MaterialIcons name="home" size={size} color={color} />
-      ),
-    }}
-  />
-  <Tabs.Screen
-    // Name of the route to hide.
-    name="about"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      title: "About",
-      tabBarIcon: ({ color, size }) => (
-        <Ionicons name="people" size={size} color={color} />
-      ),
-    }}
-  />
-  <Tabs.Screen
-    // Name of the route to hide.
-    name="live"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      href: null,
-      title: "Live",
-      tabBarIcon: ({ color, size }) => (
-        <Ionicons name="body" size={size} color={color} />
-      ),
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => {
-            router.back();
-          }}
-        >
-          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
-        </TouchableOpacity>
-      ),
-    }}
-  />
-  <Tabs.Screen
-    // Name of the route to hide.
-    name="learn"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      href: null,
-      title: "Learn",
-      tabBarIcon: ({ color, size }) => (
-        <MaterialCommunityIcons name="brain" size={size} color={color} />
-      ),
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => {
-            router.back();
-          }}
-        >
-          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
-        </TouchableOpacity>
-      ),
-    }}
-  />
-  <Tabs.Screen
-    // Name of the route to hide.
-    name="love"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      href: null,
-      title: "Love",
-      tabBarIcon: ({ color, size }) => (
-        <MaterialCommunityIcons name="heart" size={size} color={color} />
-      ),
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => {
-            router.back();
-          }}
-        >
-          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
-        </TouchableOpacity>
-      ),
-    }}
-  />
+        }}
 
-<Tabs.Screen
-    // Name of the route to hide.
-    name="calendar"
-    options={{
-      // This tab will no longer show up in the tab bar.
-      href: null,
-      title: "Calendar",
-      tabBarIcon: ({ color, size }) => (
-        <MaterialCommunityIcons name="calendar" size={size} color={color} />
-      ),
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => {
-            router.back();
-          }}
-        >
-          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
-        </TouchableOpacity>
-      ),
-    }}
-  />
+      />
+      <Drawer.Screen
+        name="tools" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: "Tools",
+        }}
+      />
+      <Drawer.Screen
+        name="about" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: "About Us",
+        }}
+      />
+    </Drawer>
 
-  </Tabs>
+    
     </PaperProvider>
   );
 }
