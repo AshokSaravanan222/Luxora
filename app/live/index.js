@@ -1,15 +1,24 @@
-import { SafeAreaView, View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet, TouchableOpacity} from "react-native";
 import { COLORS, SIZES } from "../../constants";
 import { FoodList, CameraButton } from "../../components";
-import { Stack } from "expo-router";
+import { Stack, useRouter, Tabs} from "expo-router";
+import { Icon } from "react-native-paper";
 
 const Page = () => {
+  const router = useRouter();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
         <Stack.Screen
           options={{
             headerStyle: { backgroundColor: COLORS.secondary },
             headerShadowVisible: false,
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => router.back()}
+              >
+                <Icon source="arrow-back" color={COLORS.lightWhite} size={24} />
+              </TouchableOpacity>
+            ),
             title: "",
           }}
         />

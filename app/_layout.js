@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router/tabs';
 import { useMaterial3Theme } from '@pchmn/expo-material3-theme';
-import { useColorScheme } from 'react-native';
+import { useColorScheme} from 'react-native';
+
 import {
   MD3DarkTheme,
   MD3LightTheme,
@@ -8,15 +9,23 @@ import {
 } from 'react-native-paper';
 import { useFonts } from "expo-font";
 
+import { COLORS } from '../constants';
+
 //icons
 import { MaterialIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
+//buttons
+import { TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
+
 export default function AppLayout() {
   const colorScheme = useColorScheme();
   const { theme } = useMaterial3Theme();
+
+  const router = useRouter();
 
   const paperTheme =
     colorScheme === 'dark'
@@ -85,6 +94,15 @@ export default function AppLayout() {
       tabBarIcon: ({ color, size }) => (
         <Ionicons name="body" size={size} color={color} />
       ),
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => {
+            router.back();
+          }}
+        >
+          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
+        </TouchableOpacity>
+      ),
     }}
   />
   <Tabs.Screen
@@ -97,6 +115,15 @@ export default function AppLayout() {
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name="brain" size={size} color={color} />
       ),
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => {
+            router.back();
+          }}
+        >
+          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
+        </TouchableOpacity>
+      ),
     }}
   />
   <Tabs.Screen
@@ -108,6 +135,15 @@ export default function AppLayout() {
       title: "Love",
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name="heart" size={size} color={color} />
+      ),
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => {
+            router.back();
+          }}
+        >
+          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
+        </TouchableOpacity>
       ),
     }}
   />
@@ -122,11 +158,18 @@ export default function AppLayout() {
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name="calendar" size={size} color={color} />
       ),
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => {
+            router.back();
+          }}
+        >
+          <Ionicons name="arrow-back" size={24} color={COLORS.primary} style={{padding: 10}} />
+        </TouchableOpacity>
+      ),
     }}
   />
 
-  
-  
   </Tabs>
     </PaperProvider>
   );
