@@ -46,14 +46,28 @@ export default function AppLayout() {
 
   return (
     <PaperProvider theme={paperTheme}>
-      <Drawer screenOptions={{}}>
+      <Drawer screenOptions={({ route }) => ({
+        drawerIcon: ({ color, size }) => {
+          const icons = {
+            home: 'home',
+            tools: 'account',
+            about: 'account'
+          };
+
+          return (
+            <MaterialCommunityIcons
+              name={icons[route.name]}
+              color={color}
+              size={size}
+            />
+          );
+        },
+        headerShown: route.name == "home"
+  })}>
       <Drawer.Screen
         name="home" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: "Home",
-          drawerIcon: ({size, color})=> {
-            return <Ionicons name="home" size={size} color={color}/> // globe may not exist
-        },
         }}
 
       />
@@ -69,6 +83,15 @@ export default function AppLayout() {
           drawerLabel: "About Us",
         }}
       />
+      <Drawer.Screen
+        // Name of the route to hide.
+            name="index"
+            options={{
+                drawerItemStyle: {width: 0},
+                drawerLabel: () => null,
+            href: null,
+            }}
+        />
     </Drawer>
 
     
