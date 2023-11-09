@@ -1,12 +1,12 @@
 import React, {useState, useEffect } from "react";
 import { Text, View, FlatList, SafeAreaView , ActivityIndicator, Platform, TouchableOpacity} from "react-native";
 import { SearchBar } from "react-native-elements";
-import useFetch from "../../../hook/useFetch";
+import useFetch from "../../../../hook/useFetch";
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router'
 
-import NearbyJobCard from "../../../components/learn/cards/nearby/NearbyJobCard";
-import { COLORS, SIZES } from '../../../constants'
-import styles from '../../../styles/search'
+import NearbyJobCard from "../../../../components/learn/cards/nearby/NearbyJobCard";
+import { COLORS, SIZES } from '../../../../constants'
+import styles from '../../../../styles/search'
 
 import { Ionicons } from '@expo/vector-icons'; 
 

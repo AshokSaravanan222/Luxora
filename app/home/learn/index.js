@@ -3,12 +3,12 @@ import { SafeAreaView, ScrollView, View, ActivityIndicator, Modal, Text, Touchab
 import { useRouter} from "expo-router";
 import { Drawer } from "expo-router/drawer";
 
-import { COLORS, SIZES } from "../../constants";
+import { COLORS, SIZES } from "../../../constants";
 import {
   Nearbyjobs,
   Popularjobs,
   Welcome,
-} from "../../components";
+} from "../../../components";
 import { AntDesign } from '@expo/vector-icons';
 
 

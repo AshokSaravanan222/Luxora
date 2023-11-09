@@ -46,9 +46,9 @@ export default function AppLayout() {
 
   return (
     <PaperProvider theme={paperTheme}>
-      <Drawer>
+      <Drawer screenOptions={{}}>
       <Drawer.Screen
-        name="index" // This is the name of the page and must match the url from root
+        name="home" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: "Home",
           drawerIcon: ({size, color})=> {

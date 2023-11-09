@@ -1,6 +1,6 @@
 import { SafeAreaView, View, StyleSheet, TouchableOpacity} from "react-native";
-import { COLORS, SIZES } from "../../constants";
-import { FoodList, CameraButton } from "../../components";
+import { COLORS, SIZES } from "../../../constants";
+import { FoodList, CameraButton } from "../../../components";
 import { Stack, useRouter, Tabs} from "expo-router";
 import { Icon } from "react-native-paper";
 
