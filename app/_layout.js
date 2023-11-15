@@ -48,68 +48,108 @@ export default function AppLayout() {
 
   return (
     <PaperProvider theme={paperTheme}>
-      <Drawer screenOptions={({ route }) => ({
-        drawerIcon: () => {
-          const icons = {
-            home: 'home',
-            tools: 'tools',
-            about: 'account'
-          };
-
-          return (
-            <MaterialCommunityIcons
-              name={icons[route.name]}
+      <Tabs screenOptions={{
+        headerLeft: () => (
+          <MaterialCommunityIcons
+              name={'tools'}
               color={paperTheme.colors.primary}
               size={24}
+              style={{padding: 10}}
+              onPress={() => router.push('tools')}
             />
-          );
-        },
-        headerLeft: () => (
-          <DrawerToggleButton 
-            tintColor={paperTheme.colors.primary}
-          />
         ),
         headerRight: () => (
-          <Feather name="settings" size={24} color={paperTheme.colors.primary} style={{padding: 10}} onPress={() => router.back()}/>
+          <MaterialCommunityIcons
+              name={'account'}
+              color={paperTheme.colors.primary}
+              size={24}
+              style={{padding: 10}}
+              onPress={() => router.push('about')}
+            />
         ),
         headerTitle: "",
         headerStyle: { backgroundColor: paperTheme.colors.primaryContainer},
-        drawerStyle: {backgroundColor: paperTheme.colors.background},
-        drawerActiveTintColor: paperTheme.colors.primary,
-        drawerInactiveTintColor: paperTheme.colors.secondary
-  })}>
-      <Drawer.Screen
-        name="home" // This is the name of the page and must match the url from root
-        options={{
-          drawerLabel: "Home",
-        }}
-        
-
-      />
-      <Drawer.Screen
-        name="tools" // This is the name of the page and must match the url from root
-        options={{
-          drawerLabel: "Tools",
-        }}
-      />
-      <Drawer.Screen
-        name="about" // This is the name of the page and must match the url from root
-        options={{
-          drawerLabel: "About Us",
-        }}
-      />
-      <Drawer.Screen
+      }}
+      >
+      <Tabs.Screen
         // Name of the route to hide.
-            name="index"
-            options={{
-                drawerItemStyle: {width: 0},
-                drawerLabel: () => null,
-            href: null,
-            }}
-        />
-    </Drawer>
+        name="index"
+        options={{
+          // This tab will no longer show up in the tab bar.
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+    // Name of the route to hide.
+        name="home"
+        options={{
+          // This tab will no longer show up in the tab bar.
+          title: "Home",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+    // Name of the route to hide.
+        name="learn"
+        options={{
+          // This tab will no longer show up in the tab bar.
+          title: "Learn",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="book" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+    // Name of the route to hide.
+    name="live"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      title: "Live",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="run" size={size} color={color} />
+      ),
+    }}
+  />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="calendar"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      title: "Calendar",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="calendar" size={size} color={color} />
+      ),
+    }}
+  />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="tools"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      href: null,
+      title: "Tools",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="tools" size={size} color={color} />
+      ),
+    }}
+  />
+  <Tabs.Screen
+    // Name of the route to hide.
+    name="about"
+    options={{
+      // This tab will no longer show up in the tab bar.
+      href: null,
+      title: "About Us",
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="account" size={size} color={color} />
+      ),
+    }}
+  />
 
-    
+      </Tabs>
+
     </PaperProvider>
   );
 }

@@ -55,14 +55,14 @@ export default function Page() {
                     icon="book"
                     style={[styles.fab, styles.fab1]}
                     customSize={FAB_SIZE}
-                    onPress={() => router.push("/home/learn")}
+                    onPress={() => router.push("/learn")}
                 />
 
                 <FAB
                     icon="run"
                     style={[styles.fab, styles.fab2]}
                     customSize={FAB_SIZE}
-                    onPress={() => router.push("/home/live")}
+                    onPress={() => router.push("/live")}
                 />
 
                 {/* <FAB
@@ -78,7 +78,7 @@ export default function Page() {
                     icon="calendar"
                     label={"Calendar"}
                     style={{width: FAB_SIZE*2, borderColor: 'red', backgroundColor: 'white'}}
-                    onPress={() => router.push("/home/calendar")}
+                    onPress={() => router.push("/calendar")}
             />
             </View>
 

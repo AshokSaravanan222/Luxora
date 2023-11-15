@@ -15,6 +15,7 @@ export default function Page() {
 
   return (
     <ScrollView style={{padding: 10}} bounces={true}>
+      <Text>Tools</Text>
 
 <Card style={{marginTop: 10}}>
     <Card.Title title="Book Finder" subtitle="Get personolized book reccomendataions." left={BookLeftContent} titleVariant='titleLarge'/>
