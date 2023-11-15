@@ -28,10 +28,19 @@ const AboutPage = () => {
           }}
         >
       <Text style={styles.title}>About Us</Text>
-
       <View>
       <Avatar.Image size={150} source={images.logo} />
       </View>
+
+      {/* Why Read-AI Section */}
+      <View style={styles.section}>
+        <Text style={styles.subheading}>Why Luxora?</Text>
+        <Text style={styles.text}>
+          We started Luxora to help people lead better lives in a truly personalized manner. We hope to expand our societal impact, getting people to start their journey to knowlegde/learning making the world a more educated place.
+
+        </Text>
+      </View>
+
       <View style={styles.section}>
         <Text style={styles.subheading}>Our Mission</Text>
         <Text style={styles.text}>
@@ -78,15 +87,6 @@ const AboutPage = () => {
           </TouchableOpacity>
         </View>
         
-      </View>
-
-      {/* Why Read-AI Section */}
-      <View style={styles.section}>
-        <Text style={styles.subheading}>Why Luxora?</Text>
-        <Text style={styles.text}>
-          We started Luxora to help people lead better lives in a truly personalized manner. We hope to expand our societal impact, getting people to start their journey to knowlegde/learning making the world a more educated place.
-
-        </Text>
       </View>
 
       
