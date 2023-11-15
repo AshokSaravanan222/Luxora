@@ -17,11 +17,13 @@ import { COLORS } from '../constants';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons, AntDesign, Feather} from '@expo/vector-icons'; 
+
 
 //buttons
 import { TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter, useNavigation} from 'expo-router';
+import { DrawerToggleButton } from '@react-navigation/drawer';
 
 export default function AppLayout() {
   const colorScheme = useColorScheme();
@@ -47,28 +49,41 @@ export default function AppLayout() {
   return (
     <PaperProvider theme={paperTheme}>
       <Drawer screenOptions={({ route }) => ({
-        drawerIcon: ({ color, size }) => {
+        drawerIcon: () => {
           const icons = {
             home: 'home',
-            tools: 'account',
+            tools: 'tools',
             about: 'account'
           };
 
           return (
             <MaterialCommunityIcons
               name={icons[route.name]}
-              color={color}
-              size={size}
+              color={paperTheme.colors.primary}
+              size={24}
             />
           );
         },
-        headerShown: route.name == "home"
+        headerLeft: () => (
+          <DrawerToggleButton 
+            tintColor={paperTheme.colors.primary}
+          />
+        ),
+        headerRight: () => (
+          <Feather name="settings" size={24} color={paperTheme.colors.primary} style={{padding: 10}} onPress={() => router.back()}/>
+        ),
+        headerTitle: "",
+        headerStyle: { backgroundColor: paperTheme.colors.primaryContainer},
+        drawerStyle: {backgroundColor: paperTheme.colors.background},
+        drawerActiveTintColor: paperTheme.colors.primary,
+        drawerInactiveTintColor: paperTheme.colors.secondary
   })}>
       <Drawer.Screen
         name="home" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: "Home",
         }}
+        
 
       />
       <Drawer.Screen

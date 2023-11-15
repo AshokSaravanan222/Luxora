@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SafeAreaView, ScrollView, View, ActivityIndicator, Modal, Text, TouchableOpacity, Linking } from "react-native";
-import { useRouter} from "expo-router";
+import { Stack, useRouter} from "expo-router";
 import { Drawer } from "expo-router/drawer";
 
 import { COLORS, SIZES } from "../../../constants";
