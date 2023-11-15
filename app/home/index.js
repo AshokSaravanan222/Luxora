@@ -10,6 +10,12 @@ const FAB_SIZE = window.width * 0.4; // Example: FABs are 30% of the screen widt
 const FAB_RADIUS = FAB_SIZE / 2;
 const OFFSET = FAB_SIZE / 14; // Adjust this for the amount of overlap you want
 
+const Circle = () => {
+return <View style={styles.circle} />;
+};
+
+
+
 const styles = StyleSheet.create({
     vennDiagramContainer: {
         width: window.width, // Full width of the screen
@@ -25,11 +31,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     fab1: {
-        top: 0,
+        top: FAB_RADIUS,
         left: window.width / 2 - FAB_SIZE - OFFSET, // Centered and offset left
     },
     fab2: {
-        top: 0,
+        top: FAB_RADIUS,
         right: window.width / 2 - FAB_SIZE - OFFSET, // Centered and offset right
     },
     fab3: {
@@ -40,8 +46,15 @@ const styles = StyleSheet.create({
         padding: 20,
         alignItems: 'center',
         justifyContent: 'center',
-    }
-    // Other styles...
+    },
+    circle: {
+        width: FAB_SIZE*2 + OFFSET,
+        height: FAB_SIZE*2 + OFFSET,
+        borderRadius: FAB_SIZE*2,
+        backgroundColor: "teal",
+        position: 'absolute',
+        left: window.width / 2 - FAB_SIZE - OFFSET
+      },
 });
 
 export default function Page() {
@@ -50,7 +63,9 @@ export default function Page() {
   return (
     <ScrollView>
             <Text variant="displayMedium" style={{padding: 10}}>Welcome back Jay!</Text>
+            
             <View style={styles.vennDiagramContainer}>
+                <Circle />
                 <FAB
                     icon="book"
                     style={[styles.fab, styles.fab1]}
@@ -77,7 +92,7 @@ export default function Page() {
             <FAB
                     icon="calendar"
                     label={"Calendar"}
-                    style={{width: FAB_SIZE*2, borderColor: 'red', backgroundColor: 'white'}}
+                    style={{margin: 200, width: FAB_SIZE*2, borderColor: 'red', backgroundColor: 'white'}}
                     onPress={() => router.push("/calendar")}
             />
             </View>
