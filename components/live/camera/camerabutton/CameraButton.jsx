@@ -23,7 +23,7 @@ const CameraButton = () => {
 const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.tertiary,
     borderRadius: 25, // Rounded corners to make it pill-shaped
     paddingHorizontal: 20,
     paddingVertical: 10,

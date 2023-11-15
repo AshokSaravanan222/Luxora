@@ -5,8 +5,7 @@ import FoodModal from "./modal/FoodModal";
 import {checkImageURL} from "../../../utils";
 
 import styles from "./fooditem.style";
-
-import { nutritionLogo } from "../../../constants"
+import { images } from "../../../constants";
 
 const FoodItem = ( {food} ) => {
 
@@ -31,14 +30,14 @@ const FoodItem = ( {food} ) => {
           setModalVisible(!modalVisible);
         }}
       >
-        <FoodModal food={food} onPress={onPress} thumbnail={food.thumbnail} />
+        <FoodModal food={food} onPress={onPress} thumbnail={images.nutritionLogo} />
       </Modal>
       <TouchableOpacity style={styles.logoContainer}>
         <Image
           source={
             checkImageURL(food.thumbnail)
               ? { uri: food.thumbnail }
-              : {uri: nutritionLogo}
+              : images.nutritionLogo
           }
           resizeMode="contain"
           style={styles.logImage}
