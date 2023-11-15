@@ -13,7 +13,7 @@ const OFFSET = FAB_SIZE / 14; // Adjust this for the amount of overlap you want
 const styles = StyleSheet.create({
     vennDiagramContainer: {
         width: window.width, // Full width of the screen
-        height: FAB_SIZE * 2, // Enough height to fit two FABs with some overlap
+        height: FAB_SIZE, // Enough height to fit two FABs with some overlap
         position: 'relative', // This is important for absolute positioning of children
     },
     fab: {
@@ -65,12 +65,12 @@ export default function Page() {
                     onPress={() => router.push("/home/live")}
                 />
 
-                <FAB
+                {/* <FAB
                     icon="heart"
                     style={[styles.fab, styles.fab3]}
                     customSize={FAB_SIZE}
                     onPress={() => router.push("/home/love")}
-                />
+                /> */}
             </View>
 
             <View style={styles.buttonContainer}>
