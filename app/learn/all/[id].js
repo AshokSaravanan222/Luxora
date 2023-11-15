@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native';
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
 import { Text, SafeAreaView } from 'react-native';
-import useFetch from '../../../../hook/useFetch';
+import useFetch from '../../../hook/useFetch';
 
-import NearbyJobCard from "../../../../components/learn/cards/nearby/NearbyJobCard";
-import { COLORS, SIZES } from '../../../../constants';
-import styles from '../../../../styles/search';
+import NearbyJobCard from "../../../components/learn/cards/nearby/NearbyJobCard";
+import { COLORS, SIZES } from '../../../constants';
+import styles from '../../../styles/search';
 
-import { Ionicons } from '@expo/vector-icons';
+import { Header } from '../../../components';
 
 const AllBooks = () => {
     const router = useRouter();
@@ -37,6 +37,7 @@ const AllBooks = () => {
                 contentContainerStyle={{ padding: SIZES.medium, rowGap: SIZES.medium }}
                 ListHeaderComponent={() => (
                     <>
+                    <Header />
                         <View style={styles.container}>
                             <Text style={styles.searchTitle}>{params.id}</Text>
                             <Text style={styles.noOfSearchedJobs}>All Books</Text>

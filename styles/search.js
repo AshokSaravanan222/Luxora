@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
         fontFamily: FONT.bold,
         fontSize: SIZES.xLarge,
         color: COLORS.primary,
+        paddingTop: 10
     },
     noOfSearchedJobs: {
         marginTop: 2,
