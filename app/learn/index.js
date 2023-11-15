@@ -12,7 +12,6 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 
 
-
 const Page = () => {
   const router = useRouter();
 

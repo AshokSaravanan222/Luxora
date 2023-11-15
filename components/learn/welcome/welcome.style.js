@@ -61,6 +61,11 @@ const styles = StyleSheet.create({
     fontFamily: FONT.medium,
     color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
+  title: {
+    fontFamily: FONT.bold,
+    fontSize: SIZES.xxLarge,
+    color: COLORS.primary
+  }
 });
 
 export default styles;
