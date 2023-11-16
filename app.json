@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "BeTheBest",
-    "slug": "BeTheBest",
+    "name": "Luxora",
+    "slug": "luxora",
     "version": "1.0.0",
     "scheme": "demo",
     "orientation": "default",
@@ -19,10 +19,6 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
     },
     "web": {
       "favicon": "./assets/favicon.png",
