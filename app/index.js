@@ -2,7 +2,7 @@ import { StyleSheet, Pressable, View, ScrollView, Dimensions} from "react-native
 import { Button, Surface, Text, FAB } from "react-native-paper";
 import { Link, router } from "expo-router";
 
-import { COLORS } from "../constants";
+import { COLORS, FONT, SIZES} from "../constants";
 
 const window = Dimensions.get('window');
 const FAB_SIZE = window.width * 0.4; // Example: FABs are 30% of the screen width
@@ -75,7 +75,7 @@ export default function Page() {
 
   return (
     <ScrollView>
-            <Text variant="displayMedium" style={{padding: 10}}>Welcome back Jay!</Text>
+            <Text variant="displayMedium" style={{padding: 10, fontFamily: FONT.bold, fontSize: 45, color: COLORS.primary}}>Welcome back Jay!</Text>
             <View style={styles.bulbContainer}>
                 <View style={styles.circle}/>
                 <FAB
