@@ -28,7 +28,7 @@ const AllBooks = () => {
                     <NearbyJobCard
                         book={item}
                         handleNavigate={() => router.push({
-                            pathname: `(drawer)/home/book-details/${item.id}`,
+                            pathname: `learn/book-details/${item.id}`,
                             params: {cat: cat, gen: gen}
                         })}
                     />
