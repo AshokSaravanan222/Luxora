@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         width: (FAB_SIZE+OFFSET)*2,
         height: (FAB_SIZE+OFFSET)*2,
         borderRadius: FAB_SIZE+OFFSET,
-        backgroundColor: COLORS.gray,
+        backgroundColor: COLORS.gray2,
         left: window.width / 2 - FAB_SIZE - OFFSET
     },
     calendar: {
