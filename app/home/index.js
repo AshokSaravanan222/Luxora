@@ -3,6 +3,7 @@ import { Button, Surface, Text, FAB } from "react-native-paper";
 import { Link, router } from "expo-router";
 
 import { useTheme} from 'react-native-paper';
+import { COLORS } from "../../constants";
 
 
 const window = Dimensions.get('window');
@@ -10,17 +11,21 @@ const FAB_SIZE = window.width * 0.4; // Example: FABs are 30% of the screen widt
 const FAB_RADIUS = FAB_SIZE / 2;
 const OFFSET = FAB_SIZE / 14; // Adjust this for the amount of overlap you want
 
-const Circle = () => {
-return <View style={styles.circle} />;
-};
-
-
-
 const styles = StyleSheet.create({
-    vennDiagramContainer: {
+    bulbContainer: {
         width: window.width, // Full width of the screen
         height: FAB_SIZE, // Enough height to fit two FABs with some overlap
         position: 'relative', // This is important for absolute positioning of children
+    },
+    buttonContainer: {
+        width: FAB_SIZE,
+        height: FAB_SIZE,
+        position: 'relative'
+    },
+    screwContainer: {
+        width: FAB_SIZE,
+        height: FAB_SIZE,
+        position: 'relative'
     },
     fab: {
         width: FAB_SIZE,
@@ -38,34 +43,43 @@ const styles = StyleSheet.create({
         top: FAB_RADIUS,
         right: window.width / 2 - FAB_SIZE - OFFSET, // Centered and offset right
     },
-    fab3: {
-        top: FAB_SIZE, // Offset down to create the Venn diagram effect
-        left: window.width / 2 - FAB_RADIUS, // Centered horizontally
+    circle: {
+        width: (FAB_SIZE+OFFSET)*2,
+        height: (FAB_SIZE+OFFSET)*2,
+        borderRadius: FAB_SIZE+OFFSET,
+        backgroundColor: COLORS.gray,
+        left: window.width / 2 - FAB_SIZE - OFFSET
     },
-    buttonContainer: {
-        padding: 20,
+    calendar: {
+        width: FAB_SIZE, 
+        height: FAB_SIZE, 
+        position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
+        left: window.width / 2 - FAB_RADIUS,
+        top: FAB_SIZE
     },
-    circle: {
-        width: FAB_SIZE*2 + OFFSET,
-        height: FAB_SIZE*2 + OFFSET,
-        borderRadius: FAB_SIZE*2,
-        backgroundColor: "teal",
-        position: 'absolute',
-        left: window.width / 2 - FAB_SIZE - OFFSET
-      },
+    semiCircle: {
+        width: FAB_RADIUS * 2,
+        height: FAB_RADIUS,
+        borderBottomLeftRadius: FAB_RADIUS,
+        borderBottomRightRadius: FAB_RADIUS,
+        backgroundColor: COLORS.gray,
+        overflow: 'hidden',
+        alignSelf: 'center',
+        top: FAB_SIZE + OFFSET,
+        left: window.width / 2 - FAB_RADIUS,
+        // No need for transform here
+    },
 });
 
 export default function Page() {
-    const theme = useTheme();
 
   return (
     <ScrollView>
             <Text variant="displayMedium" style={{padding: 10}}>Welcome back Jay!</Text>
-            
-            <View style={styles.vennDiagramContainer}>
-                <Circle />
+            <View style={styles.bulbContainer}>
+                <View style={styles.circle}/>
                 <FAB
                     icon="book"
                     style={[styles.fab, styles.fab1]}
@@ -79,22 +93,18 @@ export default function Page() {
                     customSize={FAB_SIZE}
                     onPress={() => router.push("/live")}
                 />
-
-                {/* <FAB
-                    icon="heart"
-                    style={[styles.fab, styles.fab3]}
-                    customSize={FAB_SIZE}
-                    onPress={() => router.push("/home/love")}
-                /> */}
             </View>
 
             <View style={styles.buttonContainer}>
             <FAB
                     icon="calendar"
-                    label={"Calendar"}
-                    style={{margin: 200, width: FAB_SIZE*2, borderColor: 'red', backgroundColor: 'white'}}
+                    customSize={FAB_SIZE}
+                    style={styles.calendar}
                     onPress={() => router.push("/calendar")}
             />
+            </View>
+            <View style={styles.screwContainer}>
+                <View style={styles.semiCircle} />
             </View>
 
         {/* <Text variant="displayLarge">Display Large</Text>
