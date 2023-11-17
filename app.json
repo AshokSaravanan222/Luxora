@@ -16,9 +16,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "2",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.asaravan.luxora"
     },
     "android": {
+      "versionCode": 2,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -29,9 +36,17 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+          "cameraPermission": "Luxora would like to use your camera to take pictures of your food."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "28af3a50-0d8a-4c34-94e5-43ffd573a590"
+      }
+    }
   }
 }
