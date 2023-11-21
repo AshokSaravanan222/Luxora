@@ -38,7 +38,7 @@ export default function CameraScreen() {
   const savePicture = async () => {
     if (image) {
       try {
-        alert('Picture saved! 🎉');
+        alert('Food Tracked! 🍏');
         setImage(null);
         console.log('saved successfully');
         router.push("live");
