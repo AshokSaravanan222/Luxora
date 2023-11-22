@@ -75,7 +75,7 @@ export default function Page() {
 
   return (
     <ScrollView>
-            <Text variant="displayMedium" style={{padding: 10, fontFamily: FONT.bold, fontSize: 45, color: COLORS.primary}}>Welcome back Jay!</Text>
+            <Text variant="displayMedium" style={{padding: 10, fontFamily: FONT.bold, fontSize: 45, color: COLORS.primary}}>Welcome back!</Text>
             <View style={styles.bulbContainer}>
                 <View style={styles.circle}/>
                 <FAB
